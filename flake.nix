@@ -14,7 +14,7 @@
     in
     {
       packages = eachSystem (pkgs: {
-        default = pkgs.callPackage ./mcp-server.nix {
+        default = pkgs.callPackage ./package.nix {
           inherit npmDepsHash;
         };
       });

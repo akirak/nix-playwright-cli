@@ -1,11 +1,11 @@
 {
-  "name": "nix-playwright-server",
+  "name": "nix-playwright-cli",
   "version": "0.1",
-  "description": "A custom wrapper around the Playwright server for packaging in Nix",
+  "description": "A custom wrapper around the Playwright CLI for packaging in Nix",
   "author": "Akira Komamura",
   "license": "MIT",
   "keywords": [],
   "dependencies": {
-    "@playwright/mcp": "^0.0.78"
+    "@playwright/cli": "^0.1.17"
   }
 }
