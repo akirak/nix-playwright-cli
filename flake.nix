@@ -17,6 +17,11 @@
         default = pkgs.callPackage ./package.nix {
           inherit npmDepsHash;
         };
+
+        firefox = pkgs.callPackage ./package.nix {
+          inherit npmDepsHash;
+          browserName = "firefox";
+        };
       });
 
       devShells = eachSystem (pkgs: {
