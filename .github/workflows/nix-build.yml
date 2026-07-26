@@ -28,6 +28,9 @@ jobs:
         os:
           - ubuntu-latest
           - macos-latest
+        package:
+          - default
+          - firefox
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -39,4 +42,6 @@ jobs:
 
       - name: Build the Nix packages
         run: |
-          nix build .#default -L
+          nix build ".#${PACKAGE}" -L
+        env:
+          PACKAGE: ${{ matrix.package }}
