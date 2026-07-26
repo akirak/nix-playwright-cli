@@ -1,31 +1,34 @@
-# A Nix Flake for Playwright MCP
-**Deprecated**: Use `playwright-mcp` package from nixpkgs instead. This
-repository is no longer maintained.
+# A Nix Flake for Playwright CLI
 
-This repository now only provides a Nix-wrapped version of the Playwright MCP
-server, with the browser executable set to Chromium from Nixpkgs. I am still
-maintaining this repository for personal use, but it doesn't offer much benefit.
+This repository provides a Nix-wrapped version of the [Playwright CLI](https://github.com/microsoft/playwright-cli)
+(`playwright-cli`). The browser executable is set to the Chromium build from Nixpkgs.
 
-For a comprehensive framework for running MCP servers on NixOS, I would
-recommend the following options:
+The Nix flake also provides a `firefox` package that uses the Firefox build from
+Nixpkgs instead.
 
-- https://github.com/natsukium/mcp-servers-nix
-- https://github.com/aloshy-ai/nix-mcp-servers
-- https://github.com/cameronfyfe/nix-mcp-servers
+> [!NOTE]
+> There is an [open PR for this package in Nixpkgs](https://github.com/NixOS/nixpkgs/pull/490230).
+
 ## Usage
-Run the server:
+
+Run the Chromium variant:
 
 ``` shell
 nix run github:akirak/nix-playwright-mcp
 ```
 
-or in headless mode:
+Run the Firefox variant:
 
 ``` shell
-nix run github:akirak/nix-playwright-mcp -- --headless
+nix run github:akirak/nix-playwright-mcp#firefox
 ```
-## Credits
-To initially make Playwright run on NixOS, I followed [a thread on the NixOS
-Discourse](https://discourse.nixos.org/t/running-playwright-tests/25655/). The
-posts by Patrizio Bekerle, a.k.a. `pbek`, and Giacomo Debidda, a.k.a. `jackdbd`,
-were especially helpful. Thanks!
+
+Show the available commands:
+
+``` shell
+nix run github:akirak/nix-playwright-mcp -- --help
+```
+
+## See Also
+
+- [nix-playwright-mcp](https://github.com/akirak/nix-playwright-mcp), now deprecated
